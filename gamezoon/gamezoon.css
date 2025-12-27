@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #000000, #220022);
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    text-align: center;
+    background: url('/image/games.webp') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 2px solid #ff0000;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000000;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(45deg, #ff0000, #00ff00);
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #0000ff, #00ff00);
+    color: #000000;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #ffffff;
+}

@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    padding: 20px;
+    background: url('/image/backcards.jpg') no-repeat center center;
+    background-size: 100% 100%; /* מתיחה של התמונה לרוחב ולגובה */
+    background-attachment: fixed;
+    background-color: #000; /* צבע רקע חלופי אם התמונה לא ממלאת את כל המסך */
+}
+
+/* קונטיינר */
+.container {
+    text-align: center;
+    background-color: #1b1b1b; /* צבע רקע כהה יותר */
+    padding: 50px 70px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 650px;
+    box-sizing: border-box;
+}
+
+/* כותרת */
+h1 {
+    font-size: 4rem;
+    color: #d32f2f; /* צבע אדום כהה */
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* הודעת ברוך הבא */
+#welcomeMessage {
+    background-color: #d32f2f; /* אדום כהה */
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    margin: 20px auto;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+/* צבע מיוחד עבור שם המשתמש */
+#userName {
+    font-style: italic;
+}
+
+/* אפקט על ההודעה כאשר מעבירים את העכבר */
+#welcomeMessage:hover {
+    background-color: #9a0007; /* אדום כהה יותר */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+}
+
+/* כפתורים */
+.buttons button {
+    font-size: 1.4rem;
+    padding: 20px 40px;
+    margin: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #388e3c; /* ירוק כהה */
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+}
+
+.buttons button:hover {
+    background-color: #2c6e2f; /* ירוק כהה יותר */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.buttons button:active {
+    transform: scale(0.98);
+}
+
+/* מדיה רספונסיבית */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 40px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #welcomeMessage {
+        font-size: 1.5rem;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+}

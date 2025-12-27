@@ -1,0 +1,508 @@
+.foundationAndDeck {
+
+    display: flex;
+
+    margin-top: 10%;
+
+    gap: 5%;
+
+    width: 100%;
+
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    text-align: center;
+
+    background-size: cover;
+
+    background-color: green;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+.game-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+.foundations {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    width: 50%;
+
+}
+
+#gameBoard {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap; /* מוסיף את האפשרות להעביר שורות */
+
+}
+
+.deck, .foundation {
+
+    width: 100px;
+
+    height: 140px;
+
+    border: 1px solid black;
+
+    background: url('/image/backcard.jpg') no-repeat center center;
+
+    background-size: cover;
+
+    cursor: grab; /* מאפשר לגרור את האלמנט */
+
+    margin: 2%;
+
+    border-radius: 10px;
+
+}
+
+.column {
+
+    width: 100px;
+
+    min-height: 140px;
+
+    margin: 5px;
+
+    padding: 5px;
+
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+.card {
+
+    width: 90px;
+
+    height: 130px;
+
+    border: 1px solid black;
+
+    background: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    cursor: grab; /* מאפשר לגרור את האלמנט */
+
+    position: absolute;
+
+    border-radius: 8px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    background-size: cover;
+
+    top: var(--offset, 0px);
+
+    
+
+    max-width: 100%;
+
+    max-height: 100%;
+
+    
+
+    
+
+}
+
+.card button {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 20px;
+
+    cursor: grab; /* מאפשר לגרור את האלמנט */
+
+    font-weight: bold;
+
+}
+
+.card button img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+#game-board {
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: space-evenly;
+
+    margin-top: 5%;
+
+    flex-wrap: wrap; /* מוסיף את האפשרות להעביר שורות */
+
+}
+
+#deckmain, #waste-pile {
+
+    position: relative;
+
+    width: 100px;
+
+    height: 140px;
+
+    max-width: 100%;
+
+    max-height: 100%;
+
+}
+
+.foundation {
+
+    position: relative;
+
+    width: 100px;
+
+    height: 140px;
+
+}
+
+.foundation button {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+#deckmain button, #waste-pile button {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+.deckcard {
+
+    display: flex;
+
+    flex-direction: row;
+
+    gap: 10px;
+
+    align-items: center;
+
+    width: auto;
+
+    height: 140px;
+
+    margin-left: 20%;
+
+}
+
+button img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+button img {
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    object-fit: scale-down;
+
+}
+
+button:active img,
+
+button:focus img {
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+}
+
+.dragging {
+
+    opacity: 0.5; /* גורם לתמונה להיות מעט שקופה בזמן הגרירה */
+
+}
+
+#time-and-score {
+
+    display: flex;
+
+    justify-content: flex-end; /* לסדר את האלמנטים בצד ימין */
+
+    align-items: center;
+
+    gap: 20px; /* רווח בין הזמן לניקוד */
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 20px;
+
+    z-index: 100; /* לוודא שהאלמנטים לא יוסתרו */
+
+}
+
+#timer, #score {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    background-color: rgba(0, 0, 0, 0.5); /* רקע שקוף כהה */
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    border: 2px solid #fff;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    font-family: 'Arial', sans-serif;
+
+}
+
+/* רספונסיביות */
+
+@media (max-width: 1200px) {
+
+    /* אם הרוחב קטן מ-1200px */
+
+    #deckmain, #waste-pile, .deck, .foundation, .column, .card {
+
+        width: 80px;
+
+        height: 110px;
+
+    }
+
+    #game-board {
+
+        flex-direction: row;
+
+        flex-wrap: wrap; /* השורות יזרמו באופן טבעי */
+
+        gap: 10px;
+
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    /* אם הרוחב קטן מ-1024px, כלומר אייפדים */
+
+    #deckmain, #waste-pile, .deck, .foundation, .column, .card {
+
+        width: 90px;
+
+        height: 120px;
+
+    }
+
+    #game-board {
+
+        flex-direction: row;
+
+        flex-wrap: wrap; /* השורות יזרמו באופן טבעי */
+
+        gap: 15px;
+
+    }
+
+    #time-and-score {
+
+        font-size: 16px; /* להקטין את הגודל */
+
+        flex-direction: row;
+
+        top: 5px; /* למקם את הזמן והניקוד במיקום יותר קרוב */
+
+        right: 5px; /* למקם את הזמן והניקוד במיקום יותר קרוב */
+
+        gap: 10px; /* להקטין את הרווח בין הזמן לניקוד */
+
+        width: 120px; /* להקטין את הרוחב של התיבה */
+
+        height: 50px;
+
+    }
+
+    #timer, #score {
+
+        font-size: 14px; /* להקטין את הגודל של הטקסט בתוך האלמנטים */
+
+        padding: 5px; /* להקטין את ה-padding */
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    /* אם הרוחב קטן מ-768px */
+
+    
+
+  .deck, .foundation, .column, .card {
+
+        width: 60px;
+
+        height: 90px;
+
+    }
+
+    #game-board {
+
+        flex-direction: row;
+
+        flex-wrap: wrap; /* השורות יזרמו באופן טבעי */
+
+        gap: 10px;
+
+    }
+
+    #time-and-score {
+
+        font-size: 12px; /* להקטין את הגודל */
+
+        flex-direction: row;
+
+        top: 5px; /* למקם את הזמן והניקוד במיקום יותר קרוב */
+
+        right: 5px; /* למקם את הזמן והניקוד במיקום יותר קרוב */
+
+        gap: 10px; /* להקטין את הרווח בין הזמן לניקוד */
+
+        width: 120px; /* להקטין את הרוחב של התיבה */
+
+        height: 50px; 
+
+    }
+
+    #timer, #score {
+
+        font-size: 10px; /* להקטין את הגודל של הטקסט בתוך האלמנטים */
+
+        padding: 2px; /* להקטין את ה-padding */
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    /* אם הרוחב קטן מ-480px */
+
+    #deckmain, #waste-pile,.deck, .foundation, .column, .card {
+
+        width: 50px;
+
+        height: 80px;
+
+    }
+
+    #game-board {
+
+        flex-direction: row;
+
+        flex-wrap: wrap; /* השורות יזרמו באופן טבעי */
+
+        gap: 8px;
+
+    }
+
+    #time-and-score {
+
+        font-size: 10px; /* להקטין את הגודל */
+
+        flex-direction: row;
+
+        top: 5px; /* למקם את הזמן והניקוד במיקום יותר קרוב */
+
+        right: 5px; /* למקם את הזמן והניקוד במיקום יותר קרוב */
+
+        gap: 10px; /* להקטין את הרווח בין הזמן לניקוד */
+
+    }
+
+    #timer, #score {
+
+        font-size: 8px; /* להקטין את הגודל של הטקסט בתוך האלמנטים */
+
+        padding: 1px; /* להקטין את ה-padding */
+
+    }
+
+}
+

@@ -1,0 +1,91 @@
+/* Centering the form on the page */
+body{
+  font-family: 'Arial', sans-serif;
+
+  background: url('/image/landr.jpg') no-repeat center center;
+    background-size: 100% 100%; /* מתיחה של התמונה לרוחב ולגובה */
+    background-attachment: fixed;
+    background-color: #111; /* רקע כהה יותר */
+}
+form {
+  margin: auto;
+  width: 40%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10%;
+}
+
+/* Full-width inputs with styling */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Set a style for the login button */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.9;
+}
+
+/* Cancel button with distinct style */
+.cancelbtn {
+  background-color: #f44336;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hover effect for cancel button */
+.cancelbtn:hover {
+  opacity: 0.8;
+}
+
+/* Container for form elements */
+.container {
+  padding: 16px;
+}
+
+/* Styling for 'Forgot password' link */
+span.psw {
+  float: right;
+  padding-top: 16px;
+  font-size: 14px;
+}
+
+/* Responsive design for small screens */
+@media screen and (max-width: 500px) {
+  form {
+      width: 80%;
+  }
+
+  .cancelbtn {
+      width: 100%;
+  }
+
+  span.psw {
+      display: block;
+      float: none;
+      text-align: center;
+  }
+}

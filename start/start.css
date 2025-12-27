@@ -1,0 +1,86 @@
+/* כללי */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    background: url('/image/start.jpg') no-repeat center center;
+    background-size: 100% 100%; /* מתיחה של התמונה לרוחב ולגובה */
+    background-attachment: fixed;
+    background-color: #111; /* רקע כהה יותר */
+}
+
+/* קונטיינר */
+.container {
+    text-align: center;
+    background-color: #fffefe; /* צבע רקע כהה יותר */
+    padding: 40px 60px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* כותרת */
+.title {
+    font-size: 3.5rem; /* גודל גדול יותר */
+    color: #d32f2f; /* אדום כהה */
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2); /* הצללה עדינה */
+}
+
+/* לינקים */
+.links {
+    margin-top: 20px;
+}
+
+.link {
+    text-decoration: none;
+    color: #388e3c; /* ירוק כהה */
+    font-size: 1.6rem; /* גודל טקסט קצת יותר גדול */
+    margin: 10px;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.link:hover {
+    color: #45a049; /* ירוק כהה יותר */
+    text-decoration: underline;
+}
+
+
+
+/* אפקט hover על הלינקים */
+.link:hover {
+    color: #ff7043; /* אדום כתום כהה */
+    text-decoration: underline;
+}
+
+/* מדיה רספונסיבית */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 40px;
+    }
+
+    .title {
+        font-size: 2.8rem; /* הקטנה מתונה בגודל הכותרת */
+    }
+
+    .link {
+        font-size: 1.4rem;
+    }
+
+}
+
